@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(238, 213, 89);
+    font-family: 'Poppins', sans-serif;
+}
+#icon{
+    font-size: 25px;
+    margin-left: 150px;
+    font-weight: 800;
+}
+#icon li{
+   margin-left: 40px;
+}
+#icon img{
+    height: 50px;
+}
+.nav{
+    margin-top: 25px;
+    padding-right: 150px;
+}
+.nav-link{
+    color: black;
+    cursor: pointer;
+}
+.input-area{
+    padding: 25px 20px;
+}
+.search-btn{
+    border: none;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    padding: 0px 25px;
+    border-radius: 7px;
+}
+#mainContent{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+}
+.each-meal-div{
+    width: 260px;
+    height: 290px;
+    background-color:white;
+    border-radius: 10px;
+    text-align: center;
+}
+.each-meal-div h3{
+    font-size: 20px;
+    padding-top: 10px;
+    color: rgb(65, 62, 62);
+}
+.each-meal-div img{ 
+    padding-bottom: 10px;
+    width: 260px;
+    height: 226px;
+    border-radius: 10px 10px 0px 0px;
+}
+#searchMeal:focus{
+    outline: none;
+}
+#mealDetails img{
+    width: 500px;
+    height: 320px;
+    border-radius: 10px 10px 0px 0px;
+}
+#mealDetails{
+    margin-top: 50px;
+    margin-left: 500px;
+    width: 500px;
+    height: 650px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+footer{
+    text-align: center;
+    background-color: rgb(243, 224, 224);
+    padding: 11px 0px;
+    border-radius: 0px 0px 10px 10px;
+}
+.footerHere a{
+    text-decoration: none;
+}
+.text{
+    padding-left: 30px;
+    padding-top: 15px;
+}
+#mealDetails{
+    display: none;
+}
