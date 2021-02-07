@@ -1,8 +1,8 @@
-
+// Take a Global Variable...
 var inputMeal = document.getElementById('inputMealName');
 var inputMealValue = inputMeal.value;
 
-// using meal API...
+// Using Meal API...
 function mealPath() {
     inputMealValue = inputMeal.value;
     if (inputMealValue == '') {
@@ -22,7 +22,7 @@ function mealPath() {
             })
     }
 }
-// To get meal information...
+// To Get Meal Information...
 const getMealInfo = mealHere => {
     const mainContent = document.getElementById('mainContent');
     mealHere.forEach(meal => {
@@ -37,26 +37,24 @@ const getMealInfo = mealHere => {
         mainContent.appendChild(mealDiv);
     })
 }
-// Click search button ...
-document.getElementById('searchMeal').addEventListener('click', function searchButtonClick() {
-    mealPath();
-    document.getElementById('inputMealName').value ='';
-    document.getElementById('mainContent').innerHTML = '';
-})
-// Click Home Button ....
-document.getElementById("homeClicked").addEventListener('click',function () {
-    document.getElementById("mealDetails").style.display = 'none';
-    document.getElementById("allData").style.display = 'block'
-    document.getElementById('mealDetails').innerHTML = '';
-})
-
-const showMealDetails = mealHere=>{
+// Meal Details API
+const mealDetailsAPI = name => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const meal = data.meals;
+            showMealDetails(meal);
+        })
+}
+// Get Meal Description...
+const showMealDetails = mealHere => {
     document.getElementById("allData").style.display = 'none'
     document.getElementById("mealDetails").style.display = "block"
     const mealDetails = document.getElementById("mealDetails");
     mealHere.forEach(details => {
-    const mealDetailDiv = document.createElement('div')
-    const mealDetailInfo = `
+        const mealDetailDiv = document.createElement('div')
+        const mealDetailInfo = `
         <img src="${details.strMealThumb}">
         <h2 class="text"> ${details.strMeal}</h2>
         <li class="text">${details.strMeasure1}  ${details.strIngredient1}</li>
@@ -67,17 +65,19 @@ const showMealDetails = mealHere=>{
         <li class="text">${details.strMeasure6}  ${details.strIngredient6}</li>
         <footer class="footerHere"><a href="${details.strYoutube}" target="blank">Watch Video</a></footer>
     `
-    mealDetailDiv.innerHTML = mealDetailInfo;
-    mealDetails.appendChild(mealDetailDiv);
+        mealDetailDiv.innerHTML = mealDetailInfo;
+        mealDetails.appendChild(mealDetailDiv);
     });
 }
-
-const mealDetailsAPI = name=>{
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                const meal = data.meals;
-                showMealDetails(meal);
-            })
-}
+// Click search button ...
+document.getElementById('searchMeal').addEventListener('click', function searchButtonClick() {
+    mealPath();
+    document.getElementById('inputMealName').value = '';
+    document.getElementById('mainContent').innerHTML = '';
+})
+// Click Home Button ....
+document.getElementById("homeClicked").addEventListener('click', function () {
+    document.getElementById("mealDetails").style.display = 'none';
+    document.getElementById("allData").style.display = 'block';
+    document.getElementById('mealDetails').innerHTML = '';
+})

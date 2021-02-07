@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
     <title>Hungry-monster</title>
     <!-- style link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font awesome/all.min.css">
+    <!-- Use favicon -->
+    <link rel="shortcut icon" href="images/hungry-man.png" type="image/x-icon">
 </head>
+
 <body>
+    <!-- Body Content -->
     <div id="homePage">
-    <div class="nav-bar">
-        <nav>
-            <div class="nav">
-            <li class="nav-link" id="icon"><img src="images/hungry-man.png"> Hungry-monster</li>
-            <a class="nav-link ml-auto" href="#allData" id="homeClicked">Home</a>
-            <li class="nav-link">About</li>
-            <li class="nav-link" >Recipes</li>
-            <li class="nav-link" >Blog</li>
-        </div>
-        </nav>
-    </div>
-    <div id="allData" class="container">
-        <form id="formId" class="col-md-6 m-auto py-5">
-            <div class="input-group mb-3">
-                <input  id="inputMealName" type="text" class="form-control input-area" placeholder="Hungry!!, search your meal here...">
-                <div class="input-group-append">
-                    <button id="searchMeal" type="button" class="search-btn">Search</button>
+        <div class="nav-bar">
+            <nav>
+                <div class="nav">
+                    <li class="nav-link" id="icon"><img src="images/hungry-man.png"> Hungry-monster</li>
+                    <a class="nav-link ml-auto" href="#allData" id="homeClicked">Home</a>
+                    <li class="nav-link">About</li>
+                    <li class="nav-link">Recipes</li>
+                    <li class="nav-link">Blog</li>
                 </div>
-            </div>
-        </form>
-        <div id="mainContent"></div>
+            </nav>
+        </div>
+        <div id="allData" class="container">
+            <form id="formId" class="col-md-6 m-auto py-5">
+                <div class="input-group mb-3">
+                    <input id="inputMealName" type="text" class="form-control input-area"
+                        placeholder="Hungry!!, search your meal here...">
+                    <div class="input-group-append">
+                        <button id="searchMeal" type="button" class="search-btn">Search</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Main content -->
+            <div id="mainContent"></div>
+        </div>
     </div>
-</div>
+    <!-- Food Details -->
     <div id="mealDetails"></div>
+    <!-- JavaScript link -->
     <script src="app.js"></script>
 </body>
+
 </html>
