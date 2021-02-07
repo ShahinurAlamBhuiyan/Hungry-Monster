@@ -43,16 +43,15 @@ document.getElementById('searchMeal').addEventListener('click', function searchB
     document.getElementById('inputMealName').value ='';
     document.getElementById('mainContent').innerHTML = '';
 })
-// // Click Home Button ....
-// document.getElementById("homeClicked").addEventListener('click',function () {
-//     document.getElementById("mealDetails").style.display = 'none';
-//     document.getElementById("formId").style.display = 'block'
-//     console.log('home clicked')
-// })
+// Click Home Button ....
+document.getElementById("homeClicked").addEventListener('click',function () {
+    document.getElementById("mealDetails").style.display = 'none';
+    document.getElementById("allData").style.display = 'block'
+    document.getElementById('mealDetails').innerHTML = '';
+})
 
 const showMealDetails = mealHere=>{
-    document.getElementById("formId").style.display = 'none'
-    document.getElementById("mainContent").style.display = 'none'
+    document.getElementById("allData").style.display = 'none'
     document.getElementById("mealDetails").style.display = "block"
     const mealDetails = document.getElementById("mealDetails");
     mealHere.forEach(details => {
