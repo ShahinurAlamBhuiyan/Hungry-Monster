@@ -22,7 +22,6 @@ function mealPath() {
             })
     }
 }
-
 // To get meal information...
 const getMealInfo = mealHere => {
     const mainContent = document.getElementById('mainContent');
@@ -38,16 +37,22 @@ const getMealInfo = mealHere => {
         mainContent.appendChild(mealDiv);
     })
 }
-
 // Click search button ...
-document.getElementById('searchMeal').addEventListener('click', function () {
-    inputMealValue = inputMeal.value;
+document.getElementById('searchMeal').addEventListener('click', function searchButtonClick() {
     mealPath();
+    document.getElementById('inputMealName').value ='';
+    document.getElementById('mainContent').innerHTML = '';
 })
-
+// // Click Home Button ....
+// document.getElementById("homeClicked").addEventListener('click',function () {
+//     document.getElementById("mealDetails").style.display = 'none';
+//     document.getElementById("formId").style.display = 'block'
+//     console.log('home clicked')
+// })
 
 const showMealDetails = mealHere=>{
-    document.getElementById("allHidden").style.display = 'none'
+    document.getElementById("formId").style.display = 'none'
+    document.getElementById("mainContent").style.display = 'none'
     document.getElementById("mealDetails").style.display = "block"
     const mealDetails = document.getElementById("mealDetails");
     mealHere.forEach(details => {

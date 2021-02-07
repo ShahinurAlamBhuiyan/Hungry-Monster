@@ -12,19 +12,20 @@
     <link rel="stylesheet" href="font awesome/all.min.css">
 </head>
 <body>
+    <div id="homePage">
     <div class="nav-bar">
         <nav>
             <div class="nav">
             <li class="nav-link" id="icon"><img src="images/hungry-man.png"> Hungry-monster</li>
-            <li class="nav-link ml-auto ">Home</li>
+            <a class="nav-link ml-auto" href="#allData" id="homeClicked">Home</a>
             <li class="nav-link">About</li>
             <li class="nav-link" >Recipes</li>
             <li class="nav-link" >Blog</li>
         </div>
         </nav>
     </div>
-    <div id="allHidden" class="container">
-        <form class="col-md-6 m-auto py-5">
+    <div id="allData" class="container">
+        <form id="formId" class="col-md-6 m-auto py-5">
             <div class="input-group mb-3">
                 <input  id="inputMealName" type="text" class="form-control input-area" placeholder="Hungry!!, search your meal here...">
                 <div class="input-group-append">
@@ -34,6 +35,7 @@
         </form>
         <div id="mainContent"></div>
     </div>
+</div>
     <div id="mealDetails"></div>
     <script src="app.js"></script>
 </body>
